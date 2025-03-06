@@ -30,6 +30,7 @@ app.use("/api/users", require("./routes/api/user"))
 app.use("/api/chatbot", require("./routes/api/chatbot"))
 app.use("/api/community", require("./routes/api/community"))
 app.use("/api/bookTherapy", require("./routes/api/bookTherapy"))
+app.use("/api/contact", require("./routes/api/contact"))
 
 // Serve static assets in production
 // app.use(express.static("./build"))
