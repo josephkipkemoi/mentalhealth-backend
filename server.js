@@ -14,7 +14,7 @@ app.use(cors({
     credentials: true, 
 }))
 
-app.use(cors({ origin: "https://zenconnect.vercel.app/api/" }));
+app.use(cors({ origin: "https://zenconnect.vercel.app" }));
 
 app.use(express.json({ extended: false }))
 
