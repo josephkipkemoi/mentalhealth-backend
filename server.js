@@ -16,6 +16,8 @@ app.use(cors({
 
 app.use(cors({ origin: "https://zenconnect.vercel.app"}));
 
+app.options("*", cors()); // Allow preflight for all routes
+
 app.use(express.json({ extended: false }))
 
 // Routes definition
