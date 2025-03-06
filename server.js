@@ -14,13 +14,7 @@ app.use(cors({
     credentials: true, 
 }))
 
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://zenconnect.vercel.app/");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    next();
-});
-  
+app.use(cors({ origin: "https://zenconnect.vercel.app/api/" }));
 
 app.use(express.json({ extended: false }))
 
