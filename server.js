@@ -9,13 +9,13 @@ const ConnectDb = require("./db/connect")
 ConnectDb()
 
 app.use(cors({
-    origin: ["http://localhost:3000", "https://zenconnect.vercel.app"], 
+    origin: ["http://localhost:3000", "https://zenconnect.vercel.app/"], 
     methods: "GET,POST,PUT,DELETE", 
     credentials: true, 
 }))
 
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://zenconnect.vercel.app");
+    res.header("Access-Control-Allow-Origin", "https://zenconnect.vercel.app/");
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
     next();
