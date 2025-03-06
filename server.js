@@ -12,6 +12,9 @@ app.use(cors())
 app.use(express.json({ extended: false }))
 
 // Routes definition
+app.get("/", (req, res) => {
+    res.send("Hello from vercel")
+})
 app.use("/api/users", require("./routes/api/user"))
 // app.use("/api/auth", require("./routes/api/auth"))
 app.use("/api/chatbot", require("./routes/api/chatbot"))
@@ -20,13 +23,10 @@ app.use("/api/community", require("./routes/api/community"))
 // Serve static assets in production
 // app.use(express.static("./build"))
 
-// if(process.env.NODE_ENV === "production") {
-//     // Set static folder
-//     app.get("*", (req, res) => {
-//         res.sendFile(path.resolve(__dirname, "build", "index.html"))
-//     })
-// }
+if(process.env.NODE_ENV !== "production") {
+    app.listen(port, () => {
+        console.log(`Server is running on port ${port}`)
+    })
+}
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`)
-})
+module.exports = app
