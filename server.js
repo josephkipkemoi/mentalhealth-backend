@@ -31,6 +31,11 @@ app.use("/api/bookTherapy", require("./routes/api/bookTherapy"))
 
 // Serve static assets in production
 // app.use(express.static("./build"))
+app.use(cors({
+    origin: ["http://localhost:3000", "https://zenconnect.vercel.app/"], 
+    methods: "GET,POST,PUT,DELETE", 
+    credentials: true, 
+}))
 
 if(process.env.NODE_ENV !== "production") {
     app.listen(port, () => {
