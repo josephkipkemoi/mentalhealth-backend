@@ -8,7 +8,12 @@ const ConnectDb = require("./db/connect")
 // Database connection
 ConnectDb()
 
-app.use(cors())
+app.use(cors({
+    origin: ["http://localhost:3000", "https://zenconnect.vercel.app"], 
+    methods: "GET,POST,PUT,DELETE", 
+    credentials: true, 
+}))
+
 app.use(express.json({ extended: false }))
 
 // Routes definition
