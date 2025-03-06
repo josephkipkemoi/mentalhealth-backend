@@ -14,7 +14,7 @@ app.use(cors({
     credentials: true, 
 }))
 
-app.use(cors({ origin: "https://zenconnect.vercel.app" }));
+app.use(cors({ origin: "https://zenconnect.vercel.app"}));
 
 app.use(express.json({ extended: false }))
 
@@ -22,10 +22,12 @@ app.use(express.json({ extended: false }))
 app.get("/", (req, res) => {
     res.send("Hello from vercel")
 })
+
 app.use("/api/users", require("./routes/api/user"))
 // app.use("/api/auth", require("./routes/api/auth"))
 app.use("/api/chatbot", require("./routes/api/chatbot"))
 app.use("/api/community", require("./routes/api/community"))
+app.use("/api/bookTherapy", require("./routes/api/bookTherapy"))
 
 // Serve static assets in production
 // app.use(express.static("./build"))
